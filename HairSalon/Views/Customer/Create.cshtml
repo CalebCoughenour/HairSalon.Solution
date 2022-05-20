@@ -11,6 +11,9 @@
   {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
+
+    @Html.Label("Set Appt. Date:")
+    <input id="ApptDate" name="ApptDate" type="date" required>
   
     @Html.Label("Preferred Stylist")
     @Html.DropDownList("StylistId")
