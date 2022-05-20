@@ -62,7 +62,7 @@ CREATE TABLE `stylists` (
 
 LOCK TABLES `stylists` WRITE;
 /*!40000 ALTER TABLE `stylists` DISABLE KEYS */;
-INSERT INTO `stylists` VALUES (1,'example name','example special',0),(2,'Belac','Hair Dye',0),(3,'example name1','Hair Dye 1',0);
+INSERT INTO `stylists` VALUES (1,'example name','example special',0),(3,'example name1','Hair Dye 1',0);
 /*!40000 ALTER TABLE `stylists` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -75,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-20 16:21:27
+-- Dump completed on 2022-05-20 16:41:40
