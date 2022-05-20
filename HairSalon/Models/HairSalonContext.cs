@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Models
 {
-  public class HairContext : DbContext
+  public class HairSalonContext : DbContext
   {
     public DbSet<Stylist> Stylists { get; set; }
     public DbSet<Customer> Customers { get; set; }
