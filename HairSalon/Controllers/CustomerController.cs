@@ -27,7 +27,6 @@ namespace HairSalon.Controllers
     {
       ViewBag.PageTitle = "Add Appt.";
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
-      ViewBag.StylistSpecialty = new SelectList(_db.Stylists, "Specialty", "Specialty");
       return View();
     }
     [HttpPost]
@@ -37,5 +36,12 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+  {
+    Customer thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+    ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+    return View(thisCust);
+  }
   }
 }
