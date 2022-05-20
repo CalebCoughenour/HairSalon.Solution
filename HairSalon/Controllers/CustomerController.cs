@@ -39,13 +39,14 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-    Customer thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
-    ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
-    return View(thisCust);
+      ViewBag.PageTitle = "Customer Details";
+      Customer thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      return View(thisCust);
     }
 
     public ActionResult Edit(int id)
     {
+      ViewBag.PageTitle = "Edit Customer";
       var thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisCust);
@@ -58,6 +59,19 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-
+    public ActionResult Delete(int id)
+    {
+      ViewBag.PageTitle = "Delete Customer";
+      var thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      return View(thisCust);
+    }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisCust = _db.Customers.FirstOrDefault(customer => customer.CustomerId == id);
+      _db.Customers.Remove(thisCust);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
