@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Customer
+
+<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
+
+<h5>Edit @Html.DisplayFor(model => model.Name)'s Appt:</h5>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CustomerId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.Label("Set Appt. Date:")
+  <input id="ApptDate" name="ApptDate" type="date" required>
+
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
+
+  <input type="submit" value="Save" class="btn btn-success" />
+}
+<p>@Html.ActionLink("Back To Customers", "Index")</p>
