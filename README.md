@@ -1,37 +1,57 @@
-# {Application Name}
+# Claire's Cuttery
 
-#### By **{List of contributors}**
+#### By Caleb Coughenour
 
-#### {Brief description of application}
+#### This is a hair salon webpage built using C#/ASP.NET
 
 ## Technologies Used
 
-* List all
-* the major technologies
-* you used in your project
-* here
+* C#
+* HTML
+* CSS
+* SQL Workbench
+* ASP.NET
+* Entity Framework
+* REPL
+* MVC
 
 ## Description
 
-{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}
+This webpage was programmed using C#, ASP.NET & Entity. It is a hair salon that allows the user to add stylists with a specialty. The user can then add a customer to that stylist. This is done using the SQL Workbench for the database with two tables, one for stylists and the other for customers.
+
+## Required
+
+* [REPL](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.401-windows-x64-installer) - restart terminal after install
+* .NET (install using "dotnet tool install -g dotnet-script" in console)
+    - Configure Bash environment variables by running "echo 'export PATH=$PATH:~/.dotnet/tools' >> ~/.bash_profile" in your gitbash terminal
+* [SQL Workbench](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi)
+    - You will need to include your password in the appsettings.json file
 
 ## Setup/Installation Requirements
 
-* This is a great place
-* to list setup instructions
-* in a simple
-* easy-to-understand
-* format
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+* Copy the git repository url from the "code" drop down on this github page
+* Open a shell program & navigate to your desktop
+* Clone the repository using the copied URL and the "git clone" command
+* In the shell program, navigate to the root directory of the newly created file called "HairSalon.Solution"
+* From the root directory, navigate to the directory named "HairSalon"
+* In this directory create a file named "appsettings.json"
+* Add the following code to the newly created .json file
+```
+{
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=caleb_coughenour;uid=root;pwd=[YOUR-PASSWORD];"
+  }
+}
+```
+* In the HairSalon directory type "dotnet run" to start the program
+* Open a web browser and plug "http://localhost:5000/" into the URL bar
 
 ## Known Bugs
 
-* Any known issues
-* should go here
+* No known issues
 
 ## License
 
 [MIT](LICENSE)
 
-Copyright (c) date author name(s)
+Copyright (c) 5/20/22 Caleb Coughenour
