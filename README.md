@@ -27,7 +27,7 @@ This webpage was programmed using C#, ASP.NET & Entity. It is a hair salon that 
 * [SQL Workbench](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi)
     - You will need to include your password in the appsettings.json file
 
-## Setup/Installation Requirements
+## Setup/Installation
 
 * Copy the git repository url from the "code" drop down on this github page
 * Open a shell program & navigate to your desktop
