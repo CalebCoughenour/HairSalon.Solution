@@ -34,6 +34,7 @@ namespace HairSalon.Controllers
     {
       _db.Customers.Add(customer);
       _db.SaveChanges();
+      // redirect to stylists details after customer is created
       return RedirectToAction("Details", "Stylists", new { id = customer.StylistId});
     }
 
@@ -56,7 +57,7 @@ namespace HairSalon.Controllers
     {
       _db.Entry(customer).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", "Stylists", new { id = customer.StylistId});
     }
 
     public ActionResult Delete(int id)
