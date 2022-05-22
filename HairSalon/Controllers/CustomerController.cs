@@ -18,15 +18,15 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Customer> model = _db.Customers.Include(customer => customer.Stylist).ToList();
+      List<Customer> model = _db.Customers.ToList();
       ViewBag.PageTitle = "Customers";
       return View(model);
     }
 
-    public ActionResult Create()
+    public ActionResult Create(int id)
     {
       ViewBag.PageTitle = "Add Appt.";
-      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.StylistId = id;
       return View();
     }
     [HttpPost]
@@ -34,7 +34,7 @@ namespace HairSalon.Controllers
     {
       _db.Customers.Add(customer);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", "Stylists", new { id = customer.StylistId});
     }
 
     public ActionResult Details(int id)
