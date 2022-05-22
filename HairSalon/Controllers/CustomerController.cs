@@ -16,13 +16,6 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
-    {
-      List<Customer> model = _db.Customers.ToList();
-      ViewBag.PageTitle = "Customers";
-      return View(model);
-    }
-
     public ActionResult Create(int id)
     {
       ViewBag.PageTitle = "Add Appt.";
@@ -35,7 +28,7 @@ namespace HairSalon.Controllers
       _db.Customers.Add(customer);
       _db.SaveChanges();
       // redirect to stylists details after customer is created
-      return RedirectToAction("Details", "Stylists", new { id = customer.StylistId});
+      return RedirectToAction("Details", "Stylist", new { id = customer.StylistId});
     }
 
     public ActionResult Details(int id)
@@ -58,7 +51,7 @@ namespace HairSalon.Controllers
       _db.Entry(customer).State = EntityState.Modified;
       _db.SaveChanges();
       // redirect to stylists details after customer is created
-      return RedirectToAction("Details", "Stylists", new { id = customer.StylistId});
+      return RedirectToAction("Details", "Stylist", new { id = customer.StylistId});
     }
 
     public ActionResult Delete(int id)
@@ -74,7 +67,7 @@ namespace HairSalon.Controllers
       _db.Customers.Remove(thisCust);
       _db.SaveChanges();
       // redirect to stylists details after customer is created
-      return RedirectToAction("Details", "Stylists", new { id = thisCust.StylistId});
+      return RedirectToAction("Details", "Stylist", new { id = thisCust.StylistId});
     }
   }
 }
