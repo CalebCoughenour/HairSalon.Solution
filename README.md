@@ -26,6 +26,14 @@ This webpage was programmed using C#, ASP.NET & Entity. It is a hair salon that 
     - Configure Bash environment variables by running "echo 'export PATH=$PATH:~/.dotnet/tools' >> ~/.bash_profile" in your gitbash terminal
 * [SQL Workbench](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi)
     - You will need to include your password in the appsettings.json file
+    - You will need to import the database from the root directory of the project named "caleb_coughenour.sql"
+    - To do this:
+        * Navigate to the administration tab in MySql Workbench
+        * Click "Data Import/Restore"
+        * Select "Import from Self-Containted File" and choose the sql file from the root directory of this project
+        * In "Default schema to be imported to:" press the "New..." button
+        * Name the schema "caleb_coughenour"
+        * Switch to the "Import Progress" tab and press the "Import" button 
 
 ## Setup/Installation
 
@@ -43,6 +51,7 @@ This webpage was programmed using C#, ASP.NET & Entity. It is a hair salon that 
   }
 }
 ```
+* Run "dotnet build" in the HairSalon directory
 * In the HairSalon directory type "dotnet run" to start the program
 * Open a web browser and plug "http://localhost:5000/" into the URL bar
 
